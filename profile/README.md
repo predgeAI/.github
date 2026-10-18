@@ -1,14 +1,18 @@
-# Predge — prediction-market intelligence for AI agents
+# Predge — the trust layer for AI-agent payments
 
-**Who actually WINS, not just who is big.** We track every Polymarket
-whale trade (≥ $10,000) and score wallets by **realized win rate,
-computed only from resolved markets** — a trade counts as won when its
-side matches the final resolution. No activity heuristics, no
-unrealized-PnL flattery. The smart-money consensus counts only proven
-winners (score > 70).
+**Your agent paid. Did the work arrive? Predge signs the answer and refunds
+the payer if not.** Delivery checks, disputes, refunds and signed receipts on
+top of any payment rail (x402, Circle and Arc, Stripe and Tempo, Tether). The
+arbiter contract that rules is live on 16 mainnets, and every ruling has a
+bond behind it ([how verdicts work](https://predge.io/docs#verdicts)).
 
-Everything is sold **per call over the [x402 protocol](https://x402.org)**:
-USDC on Base, no API keys, no accounts. Errors are never charged.
+**First vertical: prediction markets.** Signed settlement risk for Polymarket
+markets (3,005 UMA disputes analyzed, 1 Jan to 2 Oct 2026) and whale data.
+We track every Polymarket whale trade (≥ $10,000) and score wallets by
+**realized win rate, computed only from resolved markets**.
+
+Data is sold **per call over the [x402 protocol](https://x402.org)**:
+USDC, no API keys, no accounts. Errors are never charged.
 
 ## The stack
 
@@ -36,4 +40,4 @@ npx x402-proxy "https://x402-api-production-266e.up.railway.app/v1/signals/daily
 - Win rates count **resolved markets only**; movers are trade-print-derived, not orderbook quotes.
 - 4xx/5xx are never charged — settlement happens only after a successful response.
 
-**Find us:** [X @PredgeAI](https://x.com/PredgeAI) · [news](https://t.me/predge_news) · [docs](https://data.predge.io)
+**Find us:** [predge.io](https://predge.io) · [docs](https://predge.io/docs) · [X @PredgeAI](https://x.com/PredgeAI) · [news](https://t.me/predge_news) · [data docs](https://data.predge.io)

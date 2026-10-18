@@ -2,8 +2,9 @@
 
 **Your agent paid. Did the work arrive? Predge signs the answer and refunds
 the payer if not.** Delivery checks, disputes, refunds and signed receipts on
-top of any payment rail (x402, Circle and Arc, Stripe and Tempo, Tether). The
-arbiter contract that rules is live on 16 mainnets, and every ruling has a
+top of the payment rail, rail-agnostic by design. Live today: x402 on Base,
+Solana, Arc, Monad and Algorand; the arbiter contract that rules is live on
+16 mainnets including Circle's Arc, and every ruling has a
 bond behind it ([how verdicts work](https://predge.io/docs#verdicts)).
 
 **First vertical: prediction markets.** Signed settlement risk for Polymarket

@@ -13,7 +13,27 @@ We track every Polymarket whale trade (≥ $10,000) and score wallets by
 **realized win rate, computed only from resolved markets**.
 
 Data is sold **per call over the [x402 protocol](https://x402.org)**:
-USDC, no API keys, no accounts. Errors are never charged.
+USDC, no accounts. Errors are never charged. Or start with a free pilot key (below).
+
+## Get a free key
+
+Free pilot key in a minute: https://predge.io/start (no card)
+
+First call: a signed delivery verdict for a paid agent call.
+
+```bash
+export PREDGE_KEY=pdg_pilot_...   # from predge.io/start
+curl -s https://api.predge.io/v1/verdicts \
+  -H 'content-type: application/json' \
+  -H "x-predge-key: $PREDGE_KEY" \
+  -d '{"job":{"endpoint":"https://api.example.com/v1/report","expected_content_type":"application/json","required_fields":["rows"]},
+       "delivery":{"status":200,"headers":{"content-type":"application/json"},"body":"{\"rows\":[1]}"},
+       "payment":{"amount_usd":0.25,"payer":"0xBuyer","payee":"0xMerchant"}}'
+```
+
+The response carries `verdict` (`delivered` / `not_delivered` / `inconclusive`), `reason_codes`, an ed25519 `attestation` and a `verify_url`. Docs: [predge.io/docs#verdicts](https://predge.io/docs#verdicts).
+
+No key? Pay per call over x402 instead: the same request without `x-predge-key` answers 402 with the price ($0.05), payable in USDC by any x402 client.
 
 ## The stack
 

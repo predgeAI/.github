@@ -3,9 +3,9 @@
 **Your agent paid. Did the work arrive? Predge signs the answer and refunds
 the payer if not.** Delivery checks, disputes, refunds and signed receipts on
 top of the payment rail, rail-agnostic by design. Live today: x402 on Base,
-Solana, Arc, Monad and Algorand; the arbiter contract that rules is live on
-16 mainnets including Circle's Arc, and every ruling has a
-bond behind it ([how verdicts work](https://predge.io/docs#verdicts)).
+Solana, Arc, Monad and Algorand; every verdict is ed25519-signed and checks
+offline, and the v2 arbiter contracts are live on Arc and Base
+([how verdicts work](https://predge.io/docs#verdicts)).
 
 **First vertical: prediction markets.** Signed settlement risk for Polymarket
 markets (3,005 UMA disputes analyzed, 1 Jan to 2 Oct 2026) and whale data.
